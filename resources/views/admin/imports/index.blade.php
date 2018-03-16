@@ -1,8 +1,5 @@
-@extends('layouts.admin')
+@extends('admin.master')
 @section('content')
-    <div>
-        @include('nav.message')
-    </div>
     <div class="container-fluid">
         <br>
         <div class="panel panel-default">
@@ -35,7 +32,7 @@
                                                 <td style="text-align: center;">{{Carbon\Carbon::parse($re->impDate)->format('d-M-Y')}}</td>
                                                 <td style="text-align: center;">{{\Carbon\Carbon::parse($re->invoiceDate)->format('d-M-Y')}}</td>
                                                 <td style="text-align: center;">{{$re->invoiceNumber}}</td>
-                                                <td style="text-align: center;">{{$re->supplier->companyname}}</td>
+                                                <td style="text-align: center;">{{$re->supplier->companyEnName}}</td>
                                                 <td style="text-align: center;">
                                                     <a href="#" title="Current" onclick="currentViews(this.id)" id="{{$re->id}}" style="margin-right:10px;"><i class="fa fa-outdent" data-toggle="modal" data-target="#current"></i></a>
                                                     <a href="#" title="History" onclick="historyviews(this.id)" id="{{$re->id}}"><i class="fa fa-history" data-toggle="modal" data-target="#myModal"></i></a>
@@ -48,9 +45,9 @@
                                 <h4>No Record</h4>
                             @endif
                             </div>
-                            <a href="{{url('admin/dashbords')}}" class="btn btn-danger btn-sm">Close</a>
 
-                            <a href="{{url('admin/stock')}}" class="btn btn-info btn-sm">Add New</a>
+                            <a href="{{route('import.create')}}" class="btn btn-primary btn-sm">Add New</a>
+                            <a href="{{url('/admin')}}" class="btn btn-default btn-sm">Close</a>
                         </div>
                         {{--Modal view import detail--}}
                     <!-- Modal -->
@@ -72,7 +69,7 @@
             function currentViews(id) {
                 $.ajax({
                     type:'get',
-                    url: "{{url('/admin/stock/current')}}"+"/"+id,
+                    url: "{{url('/import/current')}}"+"/"+id,
                     dataType:'html',
                     success:function (data) {
                         $("#current").html(data);
@@ -86,7 +83,7 @@
             function historyviews(id) {
                 $.ajax({
                     type:'get',
-                    url: "{{url('/admin/stock')}}"+"/"+id,
+                    url: "{{url('/import/history')}}"+"/"+id,
                     dataType:'html',
                     success:function (data) {
                         $("#myModal").html(data);

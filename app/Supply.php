@@ -12,4 +12,7 @@ class Supply extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function imports(){
+        return $this->hasMany(Import::class);
+    }
 }

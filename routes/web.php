@@ -114,6 +114,8 @@
         Route::get('/import/view/record','ImportController@viewRecord');
         Route::get('/tmp/import/remove/{id}','ImportController@remove');
         Route::get('/tmp/import/discard','ImportController@discard');
+        Route::get('/import/current/{id}','ImportController@current');
+        Route::get('/import/history/{id}','ImportController@history');
 
 
 

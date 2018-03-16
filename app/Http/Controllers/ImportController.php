@@ -23,7 +23,20 @@ class ImportController extends Controller
      */
     public function index()
     {
+        $import = Import::all();
+        return view('admin.imports.index', compact('import'));
+    }
 
+    public function current($id){//show Current if import stock
+
+        $importCurrent = Import::find($id);
+        return view('admin.imports.currentView', compact('importCurrent'));
+    }
+
+    public function history($id)
+    {
+        $importId = Import::find($id);
+        return view('admin.imports.view', compact('importId'));
     }
 
     /**
@@ -116,7 +129,7 @@ class ImportController extends Controller
 
 
         $tmpDelete = Tmpimport::truncate();
-        return redirect()->back();
+        return redirect(route('import.index'));
 
     }
 
@@ -128,7 +141,7 @@ class ImportController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

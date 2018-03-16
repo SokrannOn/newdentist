@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default panel-primary">
+                        <div class="panel panel-default"​ style="box-shadow: 0px 2px 30px -11px black">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-3">

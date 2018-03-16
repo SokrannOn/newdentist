@@ -263,6 +263,7 @@
 @section('script')
 
     <script type="text/javascript">
+
         var loadFile = function(event) {
             var output = document.getElementById('preView');
             output.src = URL.createObjectURL(event.target.files[0]);
@@ -271,6 +272,7 @@
             var output = document.getElementById('preViewEdit');
             output.src = URL.createObjectURL(event.target.files[0]);
         };
+
         $(document).ready(function () {
             getTableViewDoctor();
         });

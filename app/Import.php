@@ -11,9 +11,9 @@ class Import extends Model
     }
 
     public function supplier(){
-        return $this->belongsTo(Supplier::class,'supplier_id');
+        return $this->belongsTo(Supply::class,'supplier_id');
     }
     public function histories(){
-        return $this->hasMany(History::class);
+        return $this->hasMany(History::class,'import_id','id');
     }
 }

@@ -21,10 +21,10 @@ class Product extends Model
     public  function imports(){
         return $this->belongsToMany(Import::class,'import_product','import_id','product_id')->withTimestamps()->withPivot('qty', 'landingPrice', 'mfd', 'expd');
     }
-    public function histories(){
-        return $this->hasMany(History::class);
-    }
     public function tmpimports(){
         return $this->hasMany(Tmpimport::class);
+    }
+    public function histories(){
+        return $this->hasMany(History::class,'product_id', 'id');
     }
 }
