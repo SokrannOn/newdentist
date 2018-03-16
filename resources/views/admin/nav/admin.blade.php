@@ -14,8 +14,6 @@
                 </ul>
 
             <li class="treeview"><a href="#"><i class="fa fa-address-card" aria-hidden="true"></i> Positions <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-users" aria-hidden="true"></i> Positions <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/admin/position/create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
                 </ul>
@@ -56,6 +54,37 @@
                 <ul class="treeview-menu">
                     <li><a href="{{route('treatment.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
                     <li><a href="{{route('view-treatment')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views</a></li><li class="treeview">
+                </ul>
+
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-file-pdf-o " aria-hidden="true"></i> Invoice <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('invoice.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+                    <li><a href="{{route('invoice.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views</a></li><li class="treeview">
+                </ul>
+
+
+            <li class="treeview"><a href="#"><i class="fa fa-medkit " aria-hidden="true"></i> Prescription <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('prescription.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+                    <li><a href="{{route('prescription.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views</a></li><li class="treeview">
+                </ul>
+
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-tasks " aria-hidden="true"></i> Plan <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('plan.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+                    <li><a href="{{route('plan.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views</a></li><li class="treeview">
+                </ul>
+
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-suitcase " aria-hidden="true"></i> Treatment Procedure <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('treatmentprocedure.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+                    <li><a href="{{route('treatmentprocedure.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views</a></li><li class="treeview">
                 </ul>
 
             </li>

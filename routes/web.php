@@ -118,6 +118,40 @@
         Route::get('/import/history/{id}','ImportController@history');
 
 
+        //prescription
+        Route::resource('/prescription','prescriptionController');
+        Route::get('/prescription/get/plan/{id}','prescriptionController@getPlan');
+        Route::get('/prescription/get/treatment/{id}','prescriptionController@getTreatment');
+        Route::get('/prescription/get/price/{id}','prescriptionController@getPrice');
+        Route::get('/prescription/get/current/create/{id}','prescriptionController@getCurrent');
+        Route::get('/prescription/delete/prescription/{id}','prescriptionController@deletePre');
+        Route::get('/prescription/print/prescription/{id}','prescriptionController@printPre');
+        Route::get('/prescription/client/history/{id}','prescriptionController@medicalHistory');
+
+        Route::resource('/invoice','invoiceController');
+        Route::get('/invoice/show/plan/detail/{id}','invoiceController@showDetailPlan');
+        Route::get('/invoice/print/invoice/{id}','invoiceController@printInvoice');
+
+        //plan
+        Route::resource('/plan','planController');
+        Route::get('/plan/viewCurrent/{id}','planController@viewCurrent');
+        Route::get('/plan/detail/view/{id}','planController@viewDetail');
+        Route::get('/plan/detail/content/{id}','planController@getContentViewDetail');
+        Route::get('/plan/detail/update/complete/{id}','planController@completed');
+        //doctor appointment
+        Route::get('/plan/doctor/appointment/{id}','planController@doctorAppointment');
+        Route::get('/plan/get/price/treatment/{id}','planController@getPriceTreatment');
+
+
+        //treatment procedure
+        Route::resource('/treatmentprocedure','treatmentProcedure');
+        //getTreatment
+        Route::get('/gettreatment/change/{id}','treatmentProcedure@getTreatment');
+        //get doctor
+        Route::get('/getdoctor/by/branch/{id}','treatmentProcedure@getDoctor');
+        Route::get('/get/doctor/appointment/{id}','treatmentProcedure@getDoctorApp');
+
+
 
 
     });
