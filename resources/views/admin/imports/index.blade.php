@@ -34,7 +34,7 @@
                                                 <td style="text-align: center;">{{$re->invoiceNumber}}</td>
                                                 <td style="text-align: center;">{{$re->supplier->companyEnName}}</td>
                                                 <td style="text-align: center;">
-                                                    <a href="#" title="Current" onclick="currentViews(this.id)" id="{{$re->id}}" style="margin-right:10px;"><i class="fa fa-outdent" data-toggle="modal" data-target="#current"></i></a>
+                                                    <a href="#" title="Current" onclick="currentViews(this.id)" id="{{$re->id}}" style="margin-right:10px;"><i class="fa fa-eye" data-toggle="modal" data-target="#current"></i></a>
                                                     <a href="#" title="History" onclick="historyviews(this.id)" id="{{$re->id}}"><i class="fa fa-history" data-toggle="modal" data-target="#myModal"></i></a>
                                                 </td>
                                             </tr>
