@@ -245,6 +245,9 @@
 
 
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/js.min.js') }}"></script>
+<script src="{{ asset('js/printThis.js') }}"></script>
+
 @yield('script')
 {{--datetimepicker--}}
 {{--<script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>--}}
@@ -253,15 +256,9 @@
 <script src="{{asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 
+
 <script>
-        //var user = {!! json_encode((array)auth()->user()) !!};
-        //console.log(user)
-        // window.Laravel = {
-        //     csrfToken: '{{csrf_token()}}',
-        //     auth: {
-        //         user: ""
-        //     }
-        // }
+
         function viewUser(id) {
             $.ajax({
                 type: 'get',
