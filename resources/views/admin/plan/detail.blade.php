@@ -17,9 +17,11 @@
                             <th>Appointment Date</th>
                             <th>Appointment Time</th>
                             <th>Treatment Name</th>
-                            <th class="center">Teeth Number</th>
+                            <th class="center">Product ID</th>
                             <th class="center">Quantities</th>
                             <th class="center">Unit Price</th>
+                            <th class="center">Service</th>
+                            <th class="center">Discount</th>
                             <th class="center">Amount</th>
                         </tr>
                         </thead>
@@ -37,9 +39,11 @@
                                 <td>{{\Carbon\Carbon::parse(\App\Appointment::where('id',$p->pivot->appointment_id)->value('date'))->format('d-M-Y')}}</td>
                                 <td>{{\Carbon\Carbon::parse(\App\Appointment::where('id',$p->pivot->appointment_id)->value('time'))->format('g:i A')}}</td>
                                 <td>{{$p->engname}}</td>
-                                <td class="center">{{$p->pivot->teeNo}}</td>
+                                <td class="center">{{sprintf('%06d',$p->pivot->teeNo)}}</td>
                                 <td class="center">{{$p->pivot->qty}}</td>
+                                <td class="center">{{'$ '.$p->pivot->proUnit}}</td>
                                 <td class="center">{{"$ ".$p->pivot->price}}</td>
+                                <td class="center">{{$p->dis ? $p->dis .' %' : 'N/A'}}</td>
                                 <td class="center">{{"$ ".$p->pivot->amount}}</td>
                             </tr>
                         @endforeach

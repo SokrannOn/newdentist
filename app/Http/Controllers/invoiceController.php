@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Invoice;
 use App\Plan;
+use App\Rounding;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -49,11 +50,11 @@ class invoiceController extends Controller
             $paid   = 0;
             $total = 0;
             $p = Plan::find($id);
-            $credit =$p->treatments()->sum('amount');
+            $credit =Rounding::roundUp($p->treatments()->sum('amount'),"d");
             if($dis) {
-                $total = round($credit - ($credit * $dis / 100),2);
+                $total =Rounding::roundUp($credit - ($credit * $dis / 100),"d");
             }else{
-                $total = round($credit,2);
+                $total = $credit;
                 $dis=0;
             }
             $inv = new Invoice();

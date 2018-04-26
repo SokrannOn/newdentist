@@ -2,22 +2,57 @@
 <table>
     <tr>
         <td>
-            <h1 style="color: #0d6aad; font-family: 'Arial Black', arial-black" >PRESCRIPTIONS</h1>
-            <h5 style="color: #2F3133; line-height: 1px;">CAMSOFTS COMPANY</h5>
-            <address style="line-height: 20px">
-                #S25, Street S, Toul Roka Village,<br>
-                Chak Angre Krom, Phnom Penh
-            </address>
+            <p style="color: #0b58a2; font-family: 'Khmer Mool',Serif; font-size: 16px;" >មន្ទីរពេទ្យ........</p>
         </td>
     </tr>
 </table><br>
-<table>
+<table width="100%">
     <tr>
-        <td>
-            <h1 style="color: #0d6aad; font-family: 'Arial Black', arial-black; font-size: 14px;" >TREATMENT</h1>
-            <address style="line-height: 20px">
-                {{$pre->treatment->engname}}
-            </address>
+        <td style="text-align: center ">
+            <h1 style="color: #0b58a2; font-family: 'Khmer Mool',Serif; font-size: 16px;" ><u>វេជ្ជបញ្ជា</u></h1>
+        </td>
+    </tr>
+</table>
+<table width="100%">
+    <tr>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px;" >
+            <p >
+                 {{ "ឈ្មោះ \t" }}
+            </p>
+        </td>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px;" >
+            <p >
+                {{$pre->client->khname}}
+            </p>
+        </td>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px;" >
+            <p >
+                {{'អាយុ '}}
+            </p>
+        </td>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px; text-align: left" >
+            <p >
+                {{$pre->client->age.' ឆ្នាំ'}}
+            </p>
+        </td>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px;" >
+            <p >
+                {{'ភេទ  '}}
+            </p>
+        </td>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px;" >
+            <p >
+                {{$pre->client->gender==1 ? 'ប្រុស': 'ស្រី'}}
+            </p>
+        </td>
+    </tr>
+</table>
+<table style="margin-top: 10px;">
+    <tr>
+        <td style="color: #0b58a2; font-family: 'Khmer OS Content',Serif; font-size: 12px;" >
+            <h5 >
+                {{'រោគវិនិច្ឆ័យ : '.$pre->treatment->khname}}
+            </h5>
         </td>
     </tr>
 </table>
@@ -25,12 +60,12 @@
 <hr>
 <br>
 <table width="100%">
-    <tr style="color:#0d6aad; font-family: Arial;text-align: left; ">
-        <th>Medical Name</th>
-        <th>Description</th>
-        <th style="text-align: center; padding: 5px;">Quantities</th>
-        <th style="text-align: center; padding: 5px;">Unit Price</th>
-        <th style="text-align: center; padding: 5px;">Amount</th>
+    <tr style="color:#0d6aad; font-family: 'Khmer OS Content';​text-align: left; font-size: 12px; ">
+        <td>ឈ្មោះថ្នាំ</td>
+        <td>សេចក្តីណែនាំ</td>
+        <td style="text-align: center; padding: 5px;">បរិមាណ</td>
+        {{--<th style="text-align: center; padding: 5px;">Unit Price</th>--}}
+        {{--<th style="text-align: center; padding: 5px;">Amount</th>--}}
     </tr>
     @php($total =0)
     @foreach($pre->products as $p)
@@ -38,31 +73,34 @@
             <td style="padding: 5px;">{{$p->enName}}</td>
             <td style="padding: 5px;">{{$p->pivot->des}}</td>
             <td style="text-align: center; padding: 5px;">{{$p->pivot->qty}}</td>
-            <td style="text-align: center; padding: 5px;">{{"$ ".$p->pivot->price}}</td>
-            <td style="text-align: center; padding: 5px;">{{"$ ".$p->pivot->amount}}</td>
-            @php($total+=$p->pivot->amount)
+            {{--<td style="text-align: center; padding: 5px;">{{"$ ".$p->pivot->price}}</td>--}}
+            {{--<td style="text-align: center; padding: 5px;">{{"$ ".$p->pivot->amount}}</td>--}}
+            {{--@php($total+=$p->pivot->amount)--}}
         </tr>
     @endforeach
-    <tr>
-        <td colspan="3"></td>
-        <td style="text-align: center; padding: 5px;">Total</td>
-        <td style="text-align: center; padding: 5px;">{{"$ ".$total}}</td>
-    </tr>
+    {{--<tr>--}}
+        {{--<td colspan="3"></td>--}}
+        {{--<td style="text-align: center; padding: 5px;">Total</td>--}}
+        {{--<td style="text-align: center; padding: 5px;">{{"$ ".$total}}</td>--}}
+    {{--</tr>--}}
 </table>
 <br><br>
 <div style="text-align: right;float: right;">
     <table>
         <tr>
-            <td style="color: #0d6aad; padding: 10px;">Date</td>
+            <td style="color:#0d6aad; font-family: 'Khmer OS Content';">កាលបរិច្ឆេទ </td>
             <td>{{" : ".\Carbon\Carbon::parse($pre->created_at)->format('d-M-Y')}}</td>
         </tr>
         <tr>
-            <td style="color: #0d6aad; padding: 10px;">Doctor</td>
+            <td style="color:#0d6aad; font-family: 'Khmer OS Content';">វេជ្ជបណ្ឌិត</td>
             <td>{{" : ".$pre->user->name}}</td>
         </tr>
         <tr>
-            <td style="color: #0d6aad; padding: 10px;">Sign</td>
+            <td style="color:#0d6aad; font-family: 'Khmer OS Content';">ហត្ថលេខា</td>
             <td>{{" : "}}__________________</td>
+        </tr>
+        <tr>
+            <td style="color: #0d6aad; padding: 10px; float: left"></td>
         </tr>
     </table>
 </div>

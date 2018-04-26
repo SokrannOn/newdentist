@@ -23,13 +23,17 @@
                 <td class="center">{{$p->pivot->qty}}</td>
                 <td class="center">{{"$ ". $p->pivot->price}}</td>
                 <td class="center">{{$p->dis ? $p->dis : 'N/A'}}</td>
-                <td class="center">{{"$ ".$p->pivot->amount}}</td>
-                @php($total+=$p->pivot->amount)
+                <td class="center">{{"$ ".\App\Rounding::roundUp($p->pivot->amount,"d")}}</td>
+                @php($total+=\App\Rounding::roundUp($p->pivot->amount,"d"))
             </tr>
         @endforeach
         <tr>
             <td colspan="6">Total</td>
             <td class="center">{{ "$ ".$total}}</td>
+        </tr>
+        <tr>
+            <td colspan="6">Posted Amount (Riel) </td>
+            <td class="center">{{ \App\Rounding::postedAmount($total,"u")}}</td>
         </tr>
     </tbody>
 </table>

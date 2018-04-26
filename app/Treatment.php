@@ -12,4 +12,7 @@ class Treatment extends Model
 
         return $this->belongsTo(Treatmenttype::class);
     }
+    public function plans(){
+        return $this->belongsToMany(Plan::class)->withTimestamps()->withPivot('teeNo','qty','price','proUnit','amount','appointment_id');
+    }
 }

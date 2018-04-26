@@ -13,7 +13,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     {!! Form::label('Branch') !!}
-                                    {!! Form::select('branch_id',$b,null,['class'=>'edit-form-control text-blue height-35px','placeholder'=>'Please choose branch','id'=>'branch','required']) !!}
+                                    {!! Form::select('branch_id',$b,$id,['class'=>'edit-form-control text-blue height-35px','placeholder'=>'Please choose branch','id'=>'branch','required']) !!}
                                 </div>
                             </div>
                             <div class="col-lg-3">
@@ -38,7 +38,7 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     {!! Form::label('Doctor') !!}
-                                    {!! Form::select('doctor_id',[],null,['class'=>'edit-form-control text-blue height-35px','required','placeholder'=>'Please choose doctor','id'=>'doctor_id']) !!}
+                                    {!! Form::select('doctor_id',$doc,null,['class'=>'edit-form-control text-blue height-35px','required','placeholder'=>'Please choose doctor','id'=>'doctor_id']) !!}
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                             <div class="col-lg-3">
                                                 <div class="form-group">
                                                     {!! Form::label('Branch') !!}
-                                                    {!! Form::select('braApp',$b,null,['class'=>'edit-form-control text-blue height-35px','placeholder'=>'Please choose doctor','id'=>'braApp']) !!}
+                                                    {!! Form::select('braApp',$b,null,['class'=>'edit-form-control text-blue height-35px','placeholder'=>'Please choose branch','id'=>'braApp']) !!}
                                                 </div>
                                             </div>
                                             <div class="col-lg-3">
@@ -149,21 +149,30 @@
         $('#branch').on('change',function () {
             var id =  $('#branch').val();
             var element = "<option value=''>No doctor choose</option>";
+            var plan = "<option value=''>No plan choose</option>";
             if(id){
+
                 $.ajax({
                     type : 'get',
                     url  : "{{url('/getdoctor/by/branch/')}}"+"/"+id,
                     dataType : 'json',
                     success:function (data) {
-
-                        if(data.length){
+                        console.log(data);
+                        if(data.doc.length){
                             element = "<option value=''>Please choose doctor</option>";
-                            $.map(data,function (item) {
+                            plan = "<option value=''>Please choose plan</option>";
+                            $.map(data.doc,function (item) {
                                 element += "<option value='"+item.id+"'>"+item.name+"</option>";
-                            })
+                            });
                             $('#doctor_id').html(element);
+
+                            $.map(data.plan,function (value,key) {
+                                plan += "<option value='"+key+"'>"+ value+"</option>";
+                            });
+                            $('#plan_id').html(plan);
                         }else{
                             $('#doctor_id').html(element);
+                            $('#plan_id').html(plan);
                         }
                     },
                     error:function (error) {
@@ -185,9 +194,9 @@
                     dataType : 'json',
                     success:function (data) {
 
-                        if(data.length){
+                        if(data.doc.length){
                             element = "<option value=''>Please choose doctor</option>";
-                            $.map(data,function (item) {
+                            $.map(data.doc,function (item) {
                                 element += "<option value='"+item.id+"'>"+item.name+"</option>";
                             })
                             $('#docApp').html(element);
@@ -243,6 +252,7 @@
                data : data,
                dataType : 'html',
                success:function (data) {
+//                   alert(data);
                    $('#procedureForm')[0].reset();
                },
                error:function (error) {

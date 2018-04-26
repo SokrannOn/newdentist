@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Doctor extends Model
+class Currency extends Model
 {
 
-    public function branch(){
-        return $this->belongsTo(Branch::class);
+    public function exchanges(){
+        return $this->hasMany(Exchange::class);
     }
-
     public function doctorpayments(){
         return $this->hasMany(Doctorpayment::class);
     }
+
 }
