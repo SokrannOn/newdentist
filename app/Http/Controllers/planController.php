@@ -79,7 +79,8 @@ class planController extends Controller
             }
 //            return response()->json(['id'=>$amount,'branch_id'=>$branch_id,'prilist'=>$priceList,'ProductId'=>$id,'grand'=>$grand,'Amount'=>$amount,'dis'=>$dis]);
             $p = Plan::find($plan_id);
-            if(count($p)){
+            $c=[$p];
+            if(count($c)){
                 $appointment = new Appointment();
                 $appointment->doctor_id = $request->doctor_id;
                 $appointment->client_id = $request->client_id;
