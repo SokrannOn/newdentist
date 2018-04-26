@@ -61,6 +61,7 @@ class DefaultController extends Controller
            $pos = new Position();
            $pos->name = "Administrator";
            $pos->description="Administrator";
+            $pos->active=1;
            $pos->user_id=1;
            $pos->save();
         }

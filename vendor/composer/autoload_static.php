@@ -348,11 +348,9 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\branchController' => __DIR__ . '/../..' . '/app/Http/Controllers/branchController.php',
         'App\\Http\\Controllers\\clientController' => __DIR__ . '/../..' . '/app/Http/Controllers/clientController.php',
-<<<<<<< HEAD
         'App\\Http\\Controllers\\invoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/invoiceController.php',
         'App\\Http\\Controllers\\planController' => __DIR__ . '/../..' . '/app/Http/Controllers/planController.php',
         'App\\Http\\Controllers\\prescriptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/prescriptionController.php',
-=======
         'App\\Http\\Controllers\\currencyController' => __DIR__ . '/../..' . '/app/Http/Controllers/currencyController.php',
         'App\\Http\\Controllers\\exchangeRate' => __DIR__ . '/../..' . '/app/Http/Controllers/exchangeRate.php',
         'App\\Http\\Controllers\\invoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/invoiceController.php',
@@ -360,7 +358,6 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'App\\Http\\Controllers\\planController' => __DIR__ . '/../..' . '/app/Http/Controllers/planController.php',
         'App\\Http\\Controllers\\prescriptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/prescriptionController.php',
         'App\\Http\\Controllers\\shareDoctorController' => __DIR__ . '/../..' . '/app/Http/Controllers/shareDoctorController.php',
->>>>>>> e379c499e4e5418c423cfbcf98364ebfffc9e88c
         'App\\Http\\Controllers\\treatmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/treatmentController.php',
         'App\\Http\\Controllers\\treatmentProcedure' => __DIR__ . '/../..' . '/app/Http/Controllers/treatmentProcedure.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -442,7 +439,6 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'CreateSuppliesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_09_090311_create_supplies_table.php',
         'CreateTableClientHistory' => __DIR__ . '/../..' . '/database/migrations/2018_02_22_145654_create_table_client_history.php',
         'CreateTableImportProduct' => __DIR__ . '/../..' . '/database/migrations/2018_03_12_103825_create_table_import_product.php',
-<<<<<<< HEAD
         'CreateTableImportStockout' => __DIR__ . '/../..' . '/database/migrations/2018_03_19_105018_create_table_import_stockout.php',
         'CreateTablePlanTreatment' => __DIR__ . '/../..' . '/database/migrations/2018_02_27_155315_create_table_plan_treatment.php',
         'CreateTablePrescriptionProduct' => __DIR__ . '/../..' . '/database/migrations/2018_03_14_090123_create_table_prescription_product.php',
@@ -450,11 +446,9 @@ class ComposerStaticInitfd76d284e5545d00c4278faf06f611d2
         'CreateTableStockoutreImport' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_144736_create_table_stockoutre_import.php',
         'CreateTmpimportsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_101622_create_tmpimports_table.php',
         'CreateTmprequestprosTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_03_103305_create_tmprequestpros_table.php',
-=======
         'CreateTablePlanTreatment' => __DIR__ . '/../..' . '/database/migrations/2018_02_27_155315_create_table_plan_treatment.php',
         'CreateTablePrescriptionProduct' => __DIR__ . '/../..' . '/database/migrations/2018_03_14_090123_create_table_prescription_product.php',
         'CreateTmpimportsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_13_101622_create_tmpimports_table.php',
->>>>>>> e379c499e4e5418c423cfbcf98364ebfffc9e88c
         'CreateTreatmentproceduresTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_06_111655_create_treatmentprocedures_table.php',
         'CreateTreatmentsTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_26_094744_create_treatments_table.php',
         'CreateTreatmenttypesTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_26_094247_create_treatmenttypes_table.php',
