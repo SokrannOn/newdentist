@@ -151,6 +151,28 @@
         Route::get('/getdoctor/by/branch/{id}','treatmentProcedure@getDoctor');
         Route::get('/get/doctor/appointment/{id}','treatmentProcedure@getDoctorApp');
 
+        //stockout
+        Route::resource('/stockout','StockoutController');
+        Route::get('/get/prescription/{id}','StockoutController@getPrescription');
+        Route::get('/get/stockout/details/{id}','StockoutController@show');
+
+        //requestpro
+        Route::resource('/requestpro','RequestproController');
+        Route::get('/create/request/product','RequestproController@createRequestPro');
+        Route::get('/add/request/product/{id}','RequestproController@addRequestPro');
+        Route::get('/get/show/product','RequestproController@showProduct');
+        Route::get('/remove/request/product/{id}','RequestproController@removeRequestProduct');
+        Route::get('/update/qty/request/product/{id}/{qty}','RequestproController@updateQtyRequestProduct');
+        Route::get('/discard/request/product','RequestproController@discard');
+        Route::get('/show/details/request/product/{id}','RequestproController@show');
+        //verify
+        Route::get('/create/verify/request/product/','RequestproController@createverify');
+        Route::post('/confirm/verify/request/product/','RequestproController@confirm');
+        Route::get('/get/view/requested/product/{id}','RequestproController@viewRequested');
+        Route::get('/export/request/product/','RequestproController@exportRequest');
+        Route::post('/export/requestpro/','RequestproController@exportRequestPro');
+        Route::post('/export/requestpro/','RequestproController@exportRequestPro');
+        Route::get('/get/view/request/product/detail/{id}','RequestproController@viewRequestedDetail');
 
 
 

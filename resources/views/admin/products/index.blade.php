@@ -19,14 +19,13 @@
                 <tr>
                     <td>{{$i++}}</td>
                     <td>{{$p->khName}}</td>
-                    <td>{{$p->enName}}</td>
                     <td>{{$p->category_id ==0 ? '' :$p->category->name}}</td>
                     <td>{{$p->branch_id == 0 ? '' : $p->branch->name}}</td>
                     <td>{{$p->qty}}</td>
                     <td>{{$p->user->name}}</td>
                     <td class="center">
-                        <a href="#" onclick="editProduct('{{$p->id}}')" data-toggle="modal" data-target=".bs-example-modal-sm"><i class="fa fa-edit icon-edit"></i></a></a>
-                        <a href="#" onclick="deleteProduct('{{$p->id}}')"><i class="fa fa-trash icon-delete"></i></a>
+                        <a class="cursor-pointer" onclick="editProduct('{{$p->id}}')"><i class="fa fa-edit icon-edit"></i></a></a>
+                        <a class="cursor-pointer" onclick="deleteProduct('{{$p->id}}')"><i class="fa fa-trash icon-delete"></i></a>
                     </td>
                 </tr>
             @endforeach

@@ -74,7 +74,7 @@ class prescriptionController extends Controller
             $un = $request->un;
             $qty = $request->qty;
             $amount = $un*$qty;
-            if(!count($filter)){
+            if($request->prescription_id==0){
                 $pre = new Prescription();
                 $pre->client_id = $request->client_id;
                 $pre->treatment_id = $request->treatment_id;

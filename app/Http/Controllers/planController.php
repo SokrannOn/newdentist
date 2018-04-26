@@ -62,8 +62,7 @@ class planController extends Controller
           $amount =$grand-($grand*($dis/100));
         if($request->ajax()){
             $p = Plan::find($plan_id);
-            $c=[$p];
-            if(count($c)){
+            if($p){
                 $appointment = new Appointment();
                 $appointment->doctor_id = $request->doctor_id;
                 $appointment->client_id = $request->client_id;

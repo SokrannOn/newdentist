@@ -1,3 +1,60 @@
+.scroll-y{
+    overflow-y: scroll ;
+}
+.single {
+    padding: 5px 5px; }
+.single h3.side-title {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #275dc4;
+    font-family: "Khmer OS Muol Light";
+    text-transform: uppercase; }
+.single h3.side-title:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #1b7fc4;
+    display: block;
+    margin-top: 5px; }
+.product-box{
+    background-color: #FDFEFE;
+    border-radius: 3px;
+}
+.product-box-add{
+    background-color: #F8F9F9;
+    border-radius: 3px;
+    margin: 10px;
+}
+.item:hover{
+    box-shadow: 0 0 10px -1px darkgray;
+}
+.item:hover tr{
+    color: #1b7fc4;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.item img {
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.item:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
 .icon-edit{
     color: #f39c12;
     padding: 3px;

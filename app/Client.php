@@ -14,4 +14,7 @@ class Client extends Model
     public function clienthises(){
         return $this->hasMany(Clienthis::class);
     }
+    public function prescriptions(){
+        return $this->hasMany(Prescription::class);
+    }
 }

@@ -13,6 +13,6 @@ class History extends Model
         return $this->belongsTo(Import::class,'import_id','id');
     }
     public function product(){
-        return $this->belongsTo(Product::class,'import_id','id');
+        return $this->belongsTo(Product::class);
     }
 }

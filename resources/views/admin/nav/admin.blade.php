@@ -129,6 +129,21 @@
                 </ul>
             </li>
 
+            <li class="treeview"><a href="#"><i class="fa fa-industry" aria-hidden="true"></i> Stock Out <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('stockout.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Export</a></li><li class="treeview">
+                    <li><a href="{{route('stockout.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; View</a></li><li class="treeview">
+                </ul>
+            </li>
+            <li class="treeview"><a href="#"><i class="fa fa-industry" aria-hidden="true"></i> Request <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('/create/request/product')}}">&nbsp;&nbsp;&nbsp;&nbsp; Create Request</a></li><li class="treeview">
+                    <li><a href="{{route('requestpro.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; View Request</a></li><li class="treeview">
+                    <li><a href="{{url('/create/verify/request/product')}}">&nbsp;&nbsp;&nbsp;&nbsp;Verify Request</a></li><li class="treeview">
+                    <li><a href="{{url('/export/request/product')}}">&nbsp;&nbsp;&nbsp;&nbsp;Export Request</a></li><li class="treeview">
+                </ul>
+            </li>
+
         </ul>
     </li>
 </ul>

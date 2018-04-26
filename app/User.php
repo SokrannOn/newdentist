@@ -36,6 +36,12 @@ class User extends Authenticatable
     public function products(){
         return $this->hasMany(Product::class);
     }
+    public function prescriptions(){
+        return $this->hasMany(Prescription::class);
+    }
+    public function stockouts(){
+        return $this->hasMany(Stockout::class);
+    }
 
     public function isAdmin(){
         if($this->role->name =="administrator"){

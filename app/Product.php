@@ -25,6 +25,19 @@ class Product extends Model
         return $this->hasMany(Tmpimport::class);
     }
     public function histories(){
-        return $this->hasMany(History::class,'product_id', 'id');
+        return $this->hasMany(History::class);
+    }
+    public function prescriptions(){
+        return $this->belongsToMany(Prescription::class)->withTimestamps()->withPivot('id','des','qty','price','amount');
+    }
+    public function stockouts(){
+        return $this->belongsToMany(Stockout::class)->withTimestamps()->withPivot('id','qty','expd');
+    }
+    public function tmprequestpro(){
+        return $this->hasMany(Tmprequestpro::class,'product_id', 'id');
+    }
+    public function requestpros()
+    {
+        return $this->belongsToMany(Requestpro::class,'product_requestpro')->withTimestamps()->withPivot('qty','user_id');
     }
 }

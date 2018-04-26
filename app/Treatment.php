@@ -12,4 +12,8 @@ class Treatment extends Model
 
         return $this->belongsTo(Treatmenttype::class);
     }
+    public function prescriptions(){
+
+        return $this->hasMany(Prescription::class);
+    }
 }

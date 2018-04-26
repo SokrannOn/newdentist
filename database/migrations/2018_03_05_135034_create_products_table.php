@@ -17,6 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('khName');
             $table->string('enName');
+            $table->string('productCode');
+            $table->string('productBarcode');
+            $table->string('image');
             $table->integer('category_id');
             $table->integer('branch_id');
             $table->integer('qty')->nullable();
