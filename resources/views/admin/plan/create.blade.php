@@ -8,8 +8,8 @@
             </div>
             <div class="panel-body">
                 {!! Form::open(['id'=>'planForm']) !!}
-                    {!! Form::hidden('plan_id',0,['id'=>'plan_id']) !!}
-                    {!! Form::hidden('dis',1,['id'=>'dis']) !!}
+                    {!! Form::text('plan_id',0,['id'=>'plan_id']) !!}
+                    {!! Form::text('dis',0,['id'=>'dis']) !!}
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="form-group">
@@ -45,14 +45,14 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                {!! Form::label('Teeth') !!}
-                                {!! Form::number('teeNo',null,['class'=>'edit-form-control text-blue','required','placeholder'=>'Please enter teeth number','id'=>'teeNo']) !!}
+                                {!! Form::label('Product') !!}
+                                {!! Form::select('teeNo',$product,null,['class'=>'edit-form-control text-blue','required','placeholder'=>'Please enter teeth number','id'=>'teeNo']) !!}
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 {!! Form::label('Quantities') !!}
-                                {!! Form::number('qty',1,['class'=>'edit-form-control text-blue','required','min'=>1,'placeholder'=>'Please enter quantities','id'=>'qty']) !!}
+                                {!! Form::number('qty',0,['class'=>'edit-form-control text-blue','required','min'=>1,'placeholder'=>'Please enter quantities','id'=>'qty']) !!}
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
 
                         <div class="col-lg-3">
                             <div class="form-group">
-                                {!! Form::label('Unit Price') !!}
+                                {!! Form::label('Service') !!}
                                 {!! Form::number('price',null,['class'=>'edit-form-control text-blue','required','readOnly','placeholder'=>'Unit Price','id'=>'price','step'=>'any']) !!}
                             </div>
                         </div>
@@ -152,11 +152,11 @@
                       return this.defaultSelected;
                    });
                    $('#teeNo').val('');
-                   $('#qty').val('');
+                   $('#qty').val('0');
                    $('#price').val('');
                    currentView(data.id);
                    $('#plan_id').val(data.id);
-                   console.log(data);
+//                   console.log(data);
                },
                error:function (error) {
                   console.log(error);

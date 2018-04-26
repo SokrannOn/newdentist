@@ -260,6 +260,7 @@
 
                         )
                     });
+                    $('#prescription')[0].reset();
                 },
                 error:function (error) {
                     console.log(error);

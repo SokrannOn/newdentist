@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePlanTreatment extends Migration
+class CreateShardoctorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,19 @@ class CreateTablePlanTreatment extends Migration
      */
     public function up()
     {
-        Schema::create('plan_treatment', function (Blueprint $table) {
+        Schema::create('shardoctors', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('branch_id');
             $table->integer('plan_id');
             $table->integer('treatment_id');
-            $table->tinyInteger('teeNo')->nullable();
-            $table->tinyInteger('qty');
-            $table->float('proUnit');
-            $table->float('price');
-            $table->integer('appointment_id');
+            $table->integer('doctor_id');
+            $table->double('balance');
+            $table->date('date');
             $table->double('amount');
+            $table->integer('exchangeRate');
+            $table->boolean('confirm');
+            $table->string('recordStatus')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ class CreateTablePlanTreatment extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plan_treatment');
+        Schema::dropIfExists('shardoctors');
     }
 }

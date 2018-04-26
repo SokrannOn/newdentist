@@ -85,8 +85,8 @@
             <td style="padding: 7px; text-align: center;">{{$t->pivot->qty}}</td>
             <td style="padding: 7px; text-align: center;">{{"$ ".$t->pivot->price}}</td>
             <td style="padding: 7px; text-align: center;">{{$t->dis ? $t->dis : '0' }}</td>
-            <td style="padding: 7px;">{{$t->pivot->amount ? "$ ".$t->pivot->amount : '0' }}</td>
-            @php($total+=$t->pivot->amount)
+            <td style="padding: 7px;">{{$t->pivot->amount ? "$ ".\App\Rounding::roundUp($t->pivot->amount,"d") : '0' }}</td>
+            @php($total+=\App\Rounding::roundUp($t->pivot->amount,"d"))
         </tr>
     @endforeach
     <tr>
@@ -103,5 +103,15 @@
         <td colspan="4"></td>
         <td style="padding: 7px;">Total</td>
         <td style="padding: 7px;">{{"$ ".$total}}</td>
+    </tr>
+    <tr>
+        <td colspan="4"></td>
+        <td style="padding: 7px;">Total</td>
+        <td style="padding: 7px;">{{"$ ".$total}}</td>
+    </tr>
+    <tr>
+        <td colspan="4"></td>
+        <td style="padding: 7px;">Posted Amount (Riel)</td>
+        <td style="padding: 7px;">{{\App\Rounding::postedAmount($total,"u")}}</td>
     </tr>
 </table>

@@ -22,4 +22,14 @@ class Branch extends Model
         return $this->hasMany(Supply::class);
     }
 
+    public function doctors(){
+        return $this->hasMany(Doctor::class);
+    }
+    public function plans(){
+        return $this->hasMany(Plan::class);
+    }
+    public function doctorpayments(){
+        return $this->hasMany(Doctorpayment::class);
+    }
+
 }

@@ -151,6 +151,7 @@
         Route::get('/getdoctor/by/branch/{id}','treatmentProcedure@getDoctor');
         Route::get('/get/doctor/appointment/{id}','treatmentProcedure@getDoctorApp');
 
+<<<<<<< HEAD
         //stockout
         Route::resource('/stockout','StockoutController');
         Route::get('/get/prescription/{id}','StockoutController@getPrescription');
@@ -175,6 +176,22 @@
         Route::get('/get/view/request/product/detail/{id}','RequestproController@viewRequestedDetail');
 
 
+=======
+        //doctor
+        Route::resource('/sharedoc','shareDoctorController');
+        //currency
+        Route::resource('/currency','currencyController');
+        Route::get('/currency/delete/{id}','currencyController@show');
+        Route::get('/currency/edit/{id}','currencyController@edit');
+
+        //Exchange Rate
+        Route::resource('/exchange','exchangeRate');
+
+        //payment doctor
+        Route::resource('/doctorpayment','paymentDoctorController');
+        Route::get('/doctorpayment/get-doc-info/{id}','paymentDoctorController@show');
+        Route::post('/show-payment','paymentDoctorController@showPayment');
+>>>>>>> e379c499e4e5418c423cfbcf98364ebfffc9e88c
 
     });
 

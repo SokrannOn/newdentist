@@ -64,6 +64,21 @@
                     <li><a href="{{route('invoice.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views</a></li><li class="treeview">
                 </ul>
 
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-dollar " aria-hidden="true"></i> Currency <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('currency.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+                </ul>
+
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-dollar " aria-hidden="true"></i> Exchange <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('exchange.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+                </ul>
+
+            </li>
 
             <li class="treeview"><a href="#"><i class="fa fa-medkit " aria-hidden="true"></i> Prescription <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
                 <ul class="treeview-menu">
@@ -89,6 +104,12 @@
 
             </li>
 
+            <li class="treeview"><a href="#"><i class="fa fa-user-md " aria-hidden="true"></i> Share Doctor<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('sharedoc.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; New Share</a></li><li class="treeview">
+                    <li><a href="{{route('sharedoc.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Views Shared</a></li><li class="treeview">
+                </ul>
+            </li>
 
 
         </ul>
@@ -146,4 +167,12 @@
 
         </ul>
     </li>
+
+    <li class="treeview"><a href="#"><i class="fa fa-dollar"></i><span>Payment Doctor</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{route('doctorpayment.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+            <li><a href="{{route('doctorpayment.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; View</a></li><li class="treeview">
+        </ul>
+    </li>
+
 </ul>

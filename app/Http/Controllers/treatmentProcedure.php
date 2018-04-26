@@ -6,9 +6,12 @@ use App\Appointment;
 use App\Branch;
 use App\Doctor;
 use App\Plan;
+use App\Rounding;
+use App\Shardoctor;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class treatmentProcedure extends Controller
 {
@@ -22,9 +25,12 @@ class treatmentProcedure extends Controller
 
     public function create()
     {
+       $id = Auth::user()->branch_id;
        $b = Branch::where('unused',0)->pluck('name','id');
-       $p = Plan::where('active',1)->get();
-       return view('admin.treatmentProcedure.create',compact('b','p'));
+       $p = Plan::where('branch_id',$id)->get();
+        $branch = Branch::find($id);
+        $doc = $branch->doctors()->where('active',1)->pluck('name','id');
+       return view('admin.treatmentProcedure.create',compact('b','p','id','doc'));
     }
 
 
@@ -62,8 +68,43 @@ class treatmentProcedure extends Controller
             }
             $treat->appointment_id = $appId;
             $treat->save();
+            if($request->completed =='on'){
+                $doc=  Doctor::where('id',$request->doctor_id)->value('commission');
+                $p = Plan::find($request->plan_id);
+                $amount = 0;
+                $qtyPro = 0;
+                $proUnit= 0;
+                $data = $p->treatments()->where('treatments.id',$request->treatment_id)->get();
+                foreach ($data as $d){
+                    $amount= $d->pivot->amount;
+                    $qtyPro= $d->pivot->qty;
+                    $proUnit= $d->pivot->proUnit;
+                }
+                if($doc){
 
-
+                    $balance = 0;
+                    $share = Shardoctor::where('doctor_id',$request->input('doctor_id'))->latest()->value('balance');
+                    if($share){
+                        $balance= $share;
+                    }
+                    $commission = $doc/100;
+                    $total = $amount-($proUnit*$qtyPro);
+                    $balanceCom = ($total*$commission);
+                    $totalBalance = $balance + $balanceCom;
+                    $s = new Shardoctor();
+                    $s->date = Carbon::now()->toDateString();
+                    $s->branch_id = $request->branch_id;
+                    $s->plan_id = $request->plan_id;
+                    $s->treatment_id = $request->treatment_id;
+                    $s->doctor_id  = $request->doctor_id;
+                    $s->balance = $totalBalance;
+                    $s->amount =$balanceCom;
+                    $s->exchangeRate = Rounding::getExchangeRate();
+                    $s->confirm = 0;
+                    $s->user_id = Auth::user()->id;
+                    $s->save();
+                }
+            }
         }
     }
 
@@ -107,7 +148,12 @@ class treatmentProcedure extends Controller
 
         $branch = Branch::find($id);
         $doc = $branch->doctors;
-        return response()->json($doc);
+        $plan =[];
+        $p = $branch->plans;
+        foreach ($p as $pa){
+            $plan[$pa->id]=sprintf('%09d',$pa->id);
+        }
+        return response()->json(['doc'=>$doc,'plan'=>$plan]);
     }
     public function getDoctorApp($id){
 
