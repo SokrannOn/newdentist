@@ -190,6 +190,65 @@
         Route::get('/doctorpayment/get-doc-info/{id}','paymentDoctorController@show');
         Route::post('/show-payment','paymentDoctorController@showPayment');
 
+        //payment client
+        Route::get('/client/payment/create','ClientpaymentController@create');
+        Route::post('/client/payment/submit','ClientpaymentController@submit');
+        Route::get('/entry/payment/{id}','ClientpaymentController@entryPayment');
+
+        ///Accounting Route
+        Route::get('/account/create/booking','Accounting@index');
+
+        Route::post('/account/create/booking/create','Accounting@create');
+
+
+//Account Type
+        Route::get('/account/create/acc/type','Accounting@CreateAccType');
+        Route::post('/account/create/acc/type/stored','Accounting@storedAccType');
+
+//Chart Account
+        Route::get('/account/create/acc/chart','Accounting@CreateAccChart');
+        Route::post('/account/create/acc/chart/stored','Accounting@storedAccChart');
+        Route::get('/account/get/sign/{id}','Accounting@getSign');
+
+
+        Route::get('/account/delete/{id}/{modelName}','Accounting@delete');
+        Route::get('/account/edit/{id}/{modelName}','Accounting@edit');
+
+        Route::patch('/account/accType/update/{id}','Accounting@update');
+
+        Route::get('/account/selectChartAcc/{id}','Accounting@selectChartAcc');
+        Route::get('/account/submitBook','Accounting@clearBook');
+        Route::get('/account/dTransition/{id}','Accounting@deleteTransition');
+
+
+
+    //Account Report
+
+        Route::get('/account/report/balance/sheet','Accounting@BalanceSheetReport');
+        Route::post('/account/report/filter/date','Accounting@BanlanceSearch');
+
+        Route::get('/account/report/trial/balance','Accounting@trialBalance');
+        Route::post('/account/report/trial/balance/filter','Accounting@trialBalanceFilter');
+
+    //set variable
+        Route::get('/admin/set/variable','SetvariableController@create');
+        Route::post('/admin/set/variable/generateInv/save','SetvariableController@save');
+        Route::get('/admin/discard','SetvariableController@discard');
+        Route::get('/admin/reset/variable','SetvariableController@resetVariable');
+        Route::get('/admin/set/variable/payment/create','SetvariableController@createVariablePayment');
+        Route::get('/admin/reset/variable/payment','SetvariableController@resetVariablePayment');
+        Route::post('/admin/set/variable/payment/store','SetvariableController@store');
+
+        //stock report
+        Route::resource('stockreport','StockReportController');
+        Route::get('/reportStockOut','StockReportController@reportStockOut');
+        Route::get('/reportStockExchange','StockReportController@reportStockExchange');
+        Route::get('/reportStockReturn','StockReportController@reportStockReturn');
+        Route::get('/saerchDateStockIn/{startDate}/{endDate}','StockReportController@saerchDateStockIn');
+        Route::get('/saerchDateStockOut/{startDate}/{endDate}','StockReportController@saerchDateStockOut');
+        Route::get('/saerchDateStockExchange/{startDate}/{endDate}','StockReportController@saerchDateStockExchange');
+        Route::get('/saerchDateStockReturnpro/{startDate}/{endDate}','StockReportController@saerchDateStockReturnpro');
+
     });
 
 

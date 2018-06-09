@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic')}}">
 
     {{--dateTime Picker--}}
-    {{--<link rel="stylesheet" href="{{asset('css/bootstrap-datetimepicker.min.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datetimepicker.min.css')}}">
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -250,7 +250,7 @@
 
 @yield('script')
 {{--datetimepicker--}}
-{{--<script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>--}}
+<script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 {{--  select2  --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 

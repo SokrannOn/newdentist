@@ -5,7 +5,6 @@
             <tr>
                 <th>No</th>
                 <th>Khmer Name</th>
-                <th>English Name</th>
                 <th>Category Name</th>
                 <th>Branch Name</th>
                 <th>Qty</th>

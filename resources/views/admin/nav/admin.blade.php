@@ -175,4 +175,35 @@
         </ul>
     </li>
 
+    <li class="treeview"><a href="#"><i class="fa fa-dollar"></i><span>Payment Client</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{url('/client/payment/create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Add New</a></li><li class="treeview">
+            <li><a href="{{url('/client/payment/index')}}">&nbsp;&nbsp;&nbsp;&nbsp; View</a></li><li class="treeview">
+        </ul>
+    </li>
+    <li class="treeview"><a href="#"><i class="fa fa-dollar"></i><span>Create</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{url('/account/create/acc/type')}}">&nbsp;&nbsp;&nbsp;&nbsp; Account Type</a></li><li class="treeview">
+            <li><a href="{{url('/account/create/acc/chart')}}">&nbsp;&nbsp;&nbsp;&nbsp; Chart Of Account</a></li><li class="treeview">
+        </ul>
+    </li>
+    <li class="treeview"><a href="#"><i class="fa fa-dollar"></i><span>Set Variable</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{URL::to('/admin/set/variable')}}">&nbsp;&nbsp;&nbsp;&nbsp; Generate Invoice</a></li><li class="treeview">
+            <li><a href="{{URL::to('/admin/set/variable/payment/create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Income Payment</a></li><li class="treeview">
+        </ul>
+    </li>
+
+    <li class="treeview"><a href="#"><i class="fa fa-dollar"></i><span>Stock Report</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{ route('stockreport.create')}}">&nbsp;&nbsp;&nbsp;&nbsp; Report Stock In</a></li><li class="treeview">
+            <li><a href="{{URL::to('/reportStockOut')}}">&nbsp;&nbsp;&nbsp;&nbsp; Report Stock Out</a></li><li class="treeview">
+            <li><a href="{{ route('stockreport.index')}}">&nbsp;&nbsp;&nbsp;&nbsp; Report Stock Balance</a></li><li class="treeview">
+            {{--<li><a href="{{URL::to('/admin/reportStockExchange')}}">&nbsp;&nbsp;&nbsp;&nbsp; Report Stock Exchange</a></li><li class="treeview">--}}
+            {{--<li><a href="{{URL::to('/admin/reportStockReturn')}}">&nbsp;&nbsp;&nbsp;&nbsp; Report Stock Return</a></li><li class="treeview">--}}
+            {{--<li><a href="{{URL::to('/report/expired/prouduct')}}">&nbsp;&nbsp;&nbsp;&nbsp; Expired Products</a></li><li class="treeview">--}}
+        </ul>
+    </li>
+
+
 </ul>

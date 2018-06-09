@@ -12,4 +12,7 @@ class Stockout extends Model
     public function products(){
         return $this->belongsToMany(Product::class)->withTimestamps()->withPivot('id','qty','expd');
     }
+    public  function prescription(){
+        return $this->belongsTo(Prescription::class);
+    }
 }

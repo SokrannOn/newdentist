@@ -11,7 +11,7 @@
                 <td class="center" style="color: blue">{{$pre->date}}</td>
                 <td class="center" style="color: blue">{{$pre->client->khname}}</td>
                 <td class="center" style="color: blue">{{$pre->treatment->khname}}</td>
-                <td class="center" style="color: blue">{{$pre->user->name}}</td>
+                <td class="center" style="color: blue">{{$pre->user->username}}</td>
             </tr>
     </table>
     <table class="table table-bordered table-striped table-hover">

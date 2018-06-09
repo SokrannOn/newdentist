@@ -27,6 +27,9 @@ class Prescription extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function stockouts(){
+        return $this->hasOne(Stockout::class);
+    }
 
 
 }

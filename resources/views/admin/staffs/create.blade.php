@@ -175,27 +175,20 @@
                 </div>
                 {{--create--}}
             </div>
-            <div class="container-fluid">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Staff Views</div>
-                    <div class="panel-body">
-                        <div id="listViews">
-                            <div id="loading" class="center">
-                                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                            </div>
-                        </div>
-                        <div id="viewStaff" class="modal fade" role="dialog">
-                            <div id="viewStaff">
-
-                            </div>
-                        </div>
+            <div class="panel-footer">
+                <div id="listViews">
+                    <div id="loading" class="center">
+                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                     </div>
                 </div>
             </div>
             {{--End User Views--}}
             </div>
-            <div class="panel-footer">
 
+            <div id="viewStaff" class="modal fade" role="dialog">
+                <div id="viewStaff">
+
+                </div>
             </div>
         </div>
     </div>

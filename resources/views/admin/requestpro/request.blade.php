@@ -84,7 +84,7 @@
                                         <input type="hidden" name="availableQty" value="{{$available}}" id="available{{$p['id']}}">
                                         <div style="margin-left: 7px;">
                                             <i style="font-size: 10px; font-family: 'Khmer OS System', serif; padding:5px;">{{\App\Product::where('id',$p['id'])->value('khName')}}</i><br>
-                                            <input type="number" class="form-control" name="qty" value="{{$p['qty']}}" id="{{$p['id']}}" style="outline: none; height: 25px; width: 50%;" onkeyup="qtyProduct('{{$p['id']}}')"><br>
+                                            <input type="number" class="form-control" name="qty" required value="{{$p['qty']}}" id="{{$p['id']}}" style="outline: none; height: 25px; width: 50%;" onkeyup="qtyProduct('{{$p['id']}}')"><br>
                                         </div>
                                         <div id="error{{$p['id']}}">
                                             <span style="padding:5px;font-size: 10px;">Stock Available : {{$available}} item.</span>
